@@ -2,24 +2,37 @@ import React from "react";
 
 import {
     Text,
-    View
+    View,
+    Image,
+    TextInput
 } from 'react-native';
 
 import { style } from "./styles";
+import Logo from '../../assets/logo.png'
 
 export default function Login() {
     return(
         <View style={style.container}>
+
                 <View style={style.boxTop}>
-                    <Text>top</Text>
+                    <Image 
+                        source={Logo}
+                        style={style.logo} // chamar o style da imagem
+                        resizeMode="contain"
+                    />
+                    <Text style={style.text}>Bem vindo de volta !</Text>
                 </View>
 
                 <View style={style.boxMid}>
-                    <Text>mind</Text>
+                    <Text>Endereço de e-mail</Text>
+                    <TextInput></TextInput>
+
+                    <Text>Senha</Text>
+                    <TextInput></TextInput>
                 </View>
 
                 <View style={style.boxBottom}>
-                    <Text>bootoom</Text>
+                    
                 </View>
         </View>
     )

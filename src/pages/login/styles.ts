@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
+import { themas } from "../../global/themes";
 
 export const style = StyleSheet.create({
     container:{
@@ -9,19 +10,20 @@ export const style = StyleSheet.create({
     boxTop:{
         height:Dimensions.get('window').height/3,
         width:'100%',
-        backgroundColor:'red',
+        //backgroundColor:'red',
         alignItems: 'center',       // Centraliza a imagem horizontalmente
         justifyContent: 'center'     // Centraliza a imagem verticalmente
     },
     boxMid:{
         height:Dimensions.get('window').height/4,
         width:'100%',
-        backgroundColor:'green'
+        //backgroundColor:'green',
+        paddingHorizontal:37
     },
     boxBottom:{
         height:Dimensions.get('window').height/3,
         width:'100%',
-        backgroundColor:'blue'
+        //backgroundColor:'blue'
     },
     // Adicione este estilo para a imagem
     logo:{
@@ -31,7 +33,30 @@ export const style = StyleSheet.create({
     },
     text:{
         fontWeight:'bold',
-        marginTop:40
+        marginTop:40,
+        fontSize:18
+    },
+    titleInput:{
+        marginLeft:5,
+        color:themas.Colors.gray,
+        marginTop:20
+    },
+    BoxInput:{
+        width:'100%',
+        height:40,
+        borderWidth:1,
+        borderRadius:40,
+        marginTop:10,
+        flexDirection:'row',
+        alignItems:'center',
+        paddingHorizontal:10,
+        backgroundColor:themas.Colors.lightGray,
+        borderColor:themas.Colors.lightGray
+    },
+    Input:{
+        height:'100%',
+        width:'90%',
+        borderRadius:40
     }
 
 })

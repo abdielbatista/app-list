@@ -1,9 +1,23 @@
 import React, { forwardRef,Fragment } from "react";
 
-import {View, Text, TextInput} from 'react-native';
+import {View, Text, TextInput, TextInputProps} from 'react-native';
 import { style } from "./styles";
-import { MaterialIcons } from '@expo/vector-icons';
 import { themas } from "../../global/themes";
+
+import { MaterialIcons, FontAwesome, Octicons } from '@expo/vector-icons';
+type IconComponent = React.ComponentType<React.ComponentProps<typeof MaterialIcons>> | 
+                     React.ComponentType<React.ComponentProps<typeof FontAwesome>> | 
+                     React.ComponentType<React.ComponentProps<typeof Octicons>>;
+
+type Props = TextInputProps & {
+    IconLeft?: IconComponent,
+    IconRigth?: IconComponent,
+    iconLeftName?: string,  
+    iconRightName?: string, 
+    title?: string,
+    onIconLeftPress?: () => void, 
+    onIconRigthPress?: () => void ,
+}
 
 export const Input = forwardRef(()=>{
     return(

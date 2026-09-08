@@ -58,7 +58,22 @@ export default function Login() {
                 </View>
 
                 <View style={style.boxMid}>
-                    <Input></Input>
+
+                    <Input 
+                        value={email}
+                        onChangeText={setEmail}
+                        title="ENDEREÇO DE E-MAIL"
+                        IconRigth={MaterialIcons}
+                        iconRightName="email"
+                    />
+
+                    <Input 
+                        value={password}
+                        onChangeText={setPassword}
+                        title="SENHA"
+                        IconRigth={MaterialIcons}
+                        iconRightName="password"
+                    />
                     {/* <Text style={style.titleInput}>Endereço de e-mail</Text>
 
                     <View style={style.BoxInput}>

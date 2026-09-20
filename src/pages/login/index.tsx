@@ -17,10 +17,12 @@ import Logo from '../../assets/logo.png'
 import { MaterialIcons } from '@expo/vector-icons';
 import { themas } from "../../global/themes";
 import { Input } from "../../components/input";
+import { Button } from "../../components/Button";
 
 export default function Login() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+    const [showPassword,setShowPassword] = useState(true)
     const [loading,setLoading] = useState(false);
 
     async function getLogin(){
@@ -72,7 +74,9 @@ export default function Login() {
                         onChangeText={setPassword}
                         title="SENHA"
                         IconRigth={MaterialIcons}
-                        iconRightName="password"
+                        iconRightName="remove-red-eye"
+                        secureTextEntry={showPassword}
+                        onIconRigthPress={()=>setShowPassword(!showPassword)}
                     />
                     {/* <Text style={style.titleInput}>Endereço de e-mail</Text>
 
@@ -105,7 +109,7 @@ export default function Login() {
 
                 <View style={style.boxBottom}>
                     
-                    <TouchableOpacity style={style.button} onPress={()=>getLogin()}>
+                    {/* <TouchableOpacity style={style.button} onPress={()=>getLogin()}>
                         {
                             loading?
                                 <ActivityIndicator color={'#FFFF'} size={'small'}/>
@@ -114,7 +118,9 @@ export default function Login() {
                         }   
 
                     
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
+
+                    <Button text="ENTRAR" loading={loading} onPress={()=>getLogin()}></Button>
 
                 </View>
 

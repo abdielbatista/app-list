@@ -32,9 +32,9 @@ export const Input = forwardRef((Props:Props, ref: LegacyRef<TextInput> | null)=
             <View style={style.BoxInput}>
 
                 {IconLeft && iconLeftName &&(
-                     <TouchableOpacity>
-                    <IconLeft name={iconLeftName as any} size={20} color={themas.Colors.gray} style={style.icon} />
-                </TouchableOpacity>
+                    <TouchableOpacity onPress={onIconLeftPress} style={style.Button}>
+                        <IconLeft name={iconLeftName as any} size={20} color={themas.Colors.gray} style={style.icon} />
+                    </TouchableOpacity>
                 )}
 
                 <TextInput 
@@ -43,9 +43,9 @@ export const Input = forwardRef((Props:Props, ref: LegacyRef<TextInput> | null)=
                 />
 
                 {IconRigth && iconRightName &&(
-                    <TouchableOpacity>
-                    <IconRigth name={iconRightName as any} size={20} color={themas.Colors.gray} style={style.icon} />
-                </TouchableOpacity>
+                    <TouchableOpacity onPress={onIconRigthPress} style={style.Button}>
+                        <IconRigth name={iconRightName as any} size={20} color={themas.Colors.gray} style={style.icon} />
+                    </TouchableOpacity>
                 )}
                 
 

@@ -19,7 +19,12 @@ import { themas } from "../../global/themes";
 import { Input } from "../../components/input";
 import { Button } from "../../components/Button";
 
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+
 export default function Login() {
+
+    const navigation = useNavigation<NavigationProp<any>>();
+
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [showPassword,setShowPassword] = useState(true)
@@ -35,6 +40,9 @@ export default function Login() {
 
             setTimeout(()=>{
                 if(email == "abdielb@yahoo.com" && password == '12345'){
+
+                    navigation.navigate("BottomRoutes")
+
                     Alert.alert('Logado com sucesso!')
                 }else{
                     Alert.alert('Usuario não encontrado')
@@ -78,47 +86,11 @@ export default function Login() {
                         secureTextEntry={showPassword}
                         onIconRigthPress={()=>setShowPassword(!showPassword)}
                     />
-                    {/* <Text style={style.titleInput}>Endereço de e-mail</Text>
-
-                    <View style={style.BoxInput}>
-
-                        <TextInput style={style.Input}
-                                    value={email}
-                                    onChangeText={setEmail}
-                        ></TextInput>
-                        
-                        <MaterialIcons name='email' size={20} color={themas.Colors.gray}></MaterialIcons>
-
-                    </View>
                     
-
-                    <Text style={style.titleInput}>Senha</Text>
-                  
-                    <View style={style.BoxInput}>
-
-                        <TextInput style={style.Input}
-                                    value={password}      
-                                    onChangeText={setPassword}
-                        ></TextInput>
-                        
-                        <MaterialIcons name='lock' size={20} color={themas.Colors.gray}></MaterialIcons>
-
-                    </View> */}
 
                 </View>
 
                 <View style={style.boxBottom}>
-                    
-                    {/* <TouchableOpacity style={style.button} onPress={()=>getLogin()}>
-                        {
-                            loading?
-                                <ActivityIndicator color={'#FFFF'} size={'small'}/>
-                                :
-                                <Text style={style.textButton}>Entrar</Text>
-                        }   
-
-                    
-                    </TouchableOpacity> */}
 
                     <Button text="ENTRAR" loading={loading} onPress={()=>getLogin()}></Button>
 

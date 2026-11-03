@@ -47,11 +47,13 @@ export default function Login() {
                 }else{
                     Alert.alert('Usuario não encontrado')
                 }
-                setLoading(false)
+                
             },3000)
             
         } catch (error){
             console.log(error)
+        }finally{
+            setLoading(false)
         }
     }
 
